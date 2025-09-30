@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightly Device Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>Lightly</h1>
+                <span class="device-info">Device Configuration</span>
+            </div>
+            <div class="status-indicator">
+                <div class="status-dot online"></div>
+                <span>Online</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- DMX Configuration Section -->
+            <section class="config-section">
+                <h2>DMX Configuration</h2>
+                <div class="dmx-universes">
+                    <div class="universe-config">
+                        <h3>Universe 1</h3>
+                        <div class="form-group">
+                            <label for="dmx1-ip">IP Address</label>
+                            <input type="text" id="dmx1-ip" placeholder="192.168.1.100" value="192.168.1.100">
+                        </div>
+                        <div class="form-group">
+                            <label for="dmx1-port">DMX Port</label>
+                            <input type="number" id="dmx1-port" placeholder="6454" value="6454">
+                        </div>
+                        <div class="form-group">
+                            <label for="dmx1-direction">Direction</label>
+                            <select id="dmx1-direction">
+                                <option value="input">Input</option>
+                                <option value="output" selected>Output</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="universe-config">
+                        <h3>Universe 2</h3>
+                        <div class="form-group">
+                            <label for="dmx2-ip">IP Address</label>
+                            <input type="text" id="dmx2-ip" placeholder="192.168.1.101" value="192.168.1.101">
+                        </div>
+                        <div class="form-group">
+                            <label for="dmx2-port">DMX Port</label>
+                            <input type="number" id="dmx2-port" placeholder="6455" value="6455">
+                        </div>
+                        <div class="form-group">
+                            <label for="dmx2-direction">Direction</label>
+                            <select id="dmx2-direction">
+                                <option value="input">Input</option>
+                                <option value="output" selected>Output</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OSC Configuration Section -->
+            <section class="config-section">
+                <h2>OSC Configuration</h2>
+                <div class="osc-config">
+                    <div class="form-group">
+                        <label for="osc-listen-port">Listen Port</label>
+                        <input type="number" id="osc-listen-port" placeholder="8000" value="8000">
+                    </div>
+                    <div class="form-group">
+                        <label for="osc-target-ip">Target IP</label>
+                        <input type="text" id="osc-target-ip" placeholder="192.168.1.50" value="192.168.1.50">
+                    </div>
+                    <div class="form-group">
+                        <label for="osc-target-port">Target Port</label>
+                        <input type="number" id="osc-target-port" placeholder="9000" value="9000">
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="osc-enabled" checked>
+                            <span class="toggle-slider"></span>
+                            Enable OSC
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MIDI Configuration Section -->
+            <section class="config-section">
+                <h2>MIDI Configuration</h2>
+                <div class="midi-config">
+                    <div class="form-group">
+                        <label for="midi-channel">MIDI Channel</label>
+                        <select id="midi-channel">
+                            <option value="1" selected>Channel 1</option>
+                            <option value="2">Channel 2</option>
+                            <option value="3">Channel 3</option>
+                            <option value="4">Channel 4</option>
+                            <option value="5">Channel 5</option>
+                            <option value="6">Channel 6</option>
+                            <option value="7">Channel 7</option>
+                            <option value="8">Channel 8</option>
+                            <option value="9">Channel 9</option>
+                            <option value="10">Channel 10</option>
+                            <option value="11">Channel 11</option>
+                            <option value="12">Channel 12</option>
+                            <option value="13">Channel 13</option>
+                            <option value="14">Channel 14</option>
+                            <option value="15">Channel 15</option>
+                            <option value="16">Channel 16</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="midi-device">MIDI Device</label>
+                        <select id="midi-device">
+                            <option value="none">No Device</option>
+                            <option value="usb" selected>USB MIDI</option>
+                            <option value="din">DIN MIDI</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="midi-enabled" checked>
+                            <span class="toggle-slider"></span>
+                            Enable MIDI
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GPI Configuration Section -->
+            <section class="config-section">
+                <h2>GPI Input Configuration</h2>
+                <div class="gpi-config">
+                    <div class="gpi-inputs">
+                        <div class="gpi-input">
+                            <h4>GPI Input 1</h4>
+                            <div class="form-group">
+                                <label for="gpi1-mode">Mode</label>
+                                <select id="gpi1-mode">
+                                    <option value="toggle">Toggle</option>
+                                    <option value="momentary" selected>Momentary</option>
+                                    <option value="disabled">Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gpi1-action">Action</label>
+                                <select id="gpi1-action">
+                                    <option value="dmx-blackout">DMX Blackout</option>
+                                    <option value="scene-trigger" selected>Scene Trigger</option>
+                                    <option value="osc-message">OSC Message</option>
+                                    <option value="midi-note">MIDI Note</option>
+                                </select>
+                            </div>
+                            <div class="gpi-status">
+                                <span class="status-dot offline"></span>
+                                <span>Inactive</span>
+                            </div>
+                        </div>
+
+                        <div class="gpi-input">
+                            <h4>GPI Input 2</h4>
+                            <div class="form-group">
+                                <label for="gpi2-mode">Mode</label>
+                                <select id="gpi2-mode">
+                                    <option value="toggle" selected>Toggle</option>
+                                    <option value="momentary">Momentary</option>
+                                    <option value="disabled">Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gpi2-action">Action</label>
+                                <select id="gpi2-action">
+                                    <option value="dmx-blackout" selected>DMX Blackout</option>
+                                    <option value="scene-trigger">Scene Trigger</option>
+                                    <option value="osc-message">OSC Message</option>
+                                    <option value="midi-note">MIDI Note</option>
+                                </select>
+                            </div>
+                            <div class="gpi-status">
+                                <span class="status-dot offline"></span>
+                                <span>Inactive</span>
+                            </div>
+                        </div>
+
+                        <div class="gpi-input">
+                            <h4>GPI Input 3</h4>
+                            <div class="form-group">
+                                <label for="gpi3-mode">Mode</label>
+                                <select id="gpi3-mode">
+                                    <option value="toggle">Toggle</option>
+                                    <option value="momentary">Momentary</option>
+                                    <option value="disabled" selected>Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gpi3-action">Action</label>
+                                <select id="gpi3-action">
+                                    <option value="dmx-blackout">DMX Blackout</option>
+                                    <option value="scene-trigger">Scene Trigger</option>
+                                    <option value="osc-message" selected>OSC Message</option>
+                                    <option value="midi-note">MIDI Note</option>
+                                </select>
+                            </div>
+                            <div class="gpi-status">
+                                <span class="status-dot offline"></span>
+                                <span>Disabled</span>
+                            </div>
+                        </div>
+
+                        <div class="gpi-input">
+                            <h4>GPI Input 4</h4>
+                            <div class="form-group">
+                                <label for="gpi4-mode">Mode</label>
+                                <select id="gpi4-mode">
+                                    <option value="toggle">Toggle</option>
+                                    <option value="momentary" selected>Momentary</option>
+                                    <option value="disabled">Disabled</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gpi4-action">Action</label>
+                                <select id="gpi4-action">
+                                    <option value="dmx-blackout">DMX Blackout</option>
+                                    <option value="scene-trigger">Scene Trigger</option>
+                                    <option value="osc-message">OSC Message</option>
+                                    <option value="midi-note" selected>MIDI Note</option>
+                                </select>
+                            </div>
+                            <div class="gpi-status">
+                                <span class="status-dot offline"></span>
+                                <span>Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Buttons -->
+            <section class="control-section">
+                <button class="btn btn-primary" onclick="saveConfiguration()">Save Configuration</button>
+                <button class="btn btn-secondary" onclick="resetConfiguration()">Reset to Defaults</button>
+                <button class="btn btn-tertiary" onclick="exportConfiguration()">Export Config</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
